@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Reach Vanity SQL Generator</title>
+<link rel="stylesheet" href="https://threads.plaid.com/threads.css">
+
+<link rel="stylesheet" type="text/css" href="/static/style.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+  <main class="main">
+    <div class="grid">
+      <div class="grid__column grid__column--is-twelve-columns">
+        <div id="banner" class="everpresent-content">
+          <div class="pb-md-4"><img src="https://files.readme.io/0beec18-small-Reach_Purple.png" height="55px"></div>
+          <div><h1>Reach Vanity Hack SQL Tool</h1></div>
+          <p id="intro" class="everpresent-content__subheading">
+            A quick tool to generate the sql statement for the merchants vanity rule sets.
+          </p>
+        </div>
+
+        <div id="container">
+          <label>
+            Please Note: CSV must be in the right format: Currency,Round to nearest,Rates,Charm [4 headers].
+            <a href="{{ url_for('static', filename='file.csv') }}" target=""_blank">See Example Here</a>
+          </label>
+
+          <form action = "http://localhost:5000/uploader" method = "POST"  enctype = "multipart/form-data" class=""form-control">
+
+            <div class="form-group">
+              <p>Merchant ID</p>
+              <input type="text" class="form-control" name="merchant_id" placeholder="Enter Merchant ID">
+              <small id="emailHelp" class="form-text text-muted">The Reach Merchant ID , not the UUID/MID</small>
+            </div>
+            <div class="form-group">
+              <p>Vanity Config Group ID</p>
+              <input type="text" class="form-control" name="vanity_id" placeholder="Merchant Vanity Config Group ID">
+            </div>
+            <div class="form-group">
+              <p>The Vanity Price Rules (Standard)</p>
+              <input type="file" class="form-control-file" name="file">
+            </div>
+            <hr />
+            <div class="form-group">
+              <input type="submit" class="btn btn-success btn-lg" value="Generate SQL Statement">
+            </div>
+            </form>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
+
+</body>
+</html>

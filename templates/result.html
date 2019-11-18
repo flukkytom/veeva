@@ -1,0 +1,30 @@
+{% extends "template.html" %}
+{% block title %}SQL Statement Result{% endblock %}
+{% block body %}
+<div class="card-group">
+  <div class="card">
+    <div class="card-body">
+      <h3 class="card-title">Merchant ID: {{ mid }}</h3>
+    </div>
+  </div>
+</div>
+<p>&nbsp;</p>
+<div class="card-group">
+  <div class="card">
+    <div class="card-body">
+      <h3 class="card-title">Vanity Config Group ID: {{ vid }}</h3>
+    </div>
+  </div>
+</div>
+<p>&nbsp;</p>
+<div class="card-group">
+  <div class="card">
+    <div class="card-body">
+      <h3 class="card-title">SQL Statement</h3>
+      <label class="card-text">{{ sql }}</label>
+    </div>
+  </div>
+</div>
+<p>&nbsp;</p>
+<div ><a href="/" class="btn btn-primary" role=""button">Load New Merchant Vanity Rule</a></div>
+{% endblock %}
